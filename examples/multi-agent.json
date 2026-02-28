@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "name": "team-memory-tree",
+  
+  "paths": {
+    "base_dir": "~/.my-app",
+    "data_dir": "~/.my-app/shared/memory-tree",
+    "archive_dir": "~/.my-app/shared/memory-tree/archive",
+    "obsidian_vault": "~/.my-app/shared/obsidian-vault"
+  },
+  
+  "agents": [
+    {
+      "name": "main",
+      "workspace": "~/.my-app/workspace",
+      "memory_file": "MEMORY.md",
+      "memory_dir": "memory"
+    },
+    {
+      "name": "dev",
+      "workspace": "~/.my-app/workspace-dev",
+      "memory_file": "MEMORY.md",
+      "memory_dir": "memory"
+    },
+    {
+      "name": "researcher",
+      "workspace": "~/.my-app/workspace-researcher",
+      "memory_file": "MEMORY.md",
+      "memory_dir": "memory"
+    },
+    {
+      "name": "writer",
+      "workspace": "~/.my-app/workspace-writer",
+      "memory_file": "MEMORY.md",
+      "memory_dir": "memory"
+    }
+  ],
+  
+  "confidence": {
+    "initial": 0.7,
+    "min": 0.05,
+    "max": 1.0,
+    "search_boost": 0.03,
+    "use_boost": 0.08,
+    "confirm_value": 0.95
+  },
+  
+  "decay": {
+    "grace_period_days": 60,
+    "rates": {
+      "P0": 0.0,
+      "P1": 0.004,
+      "P2": 0.008
+    }
+  },
+  
+  "cleanup": {
+    "archive_threshold": 0.3,
+    "auto_cleanup_threshold": 0.05,
+    "review_threshold": 0.1
+  },
+  
+  "sync": {
+    "enabled": true,
+    "interval_hours": 2
+  }
+}
